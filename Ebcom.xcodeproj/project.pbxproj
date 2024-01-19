@@ -1,0 +1,797 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E0D474E2B546E3E005DD4DC /* EbcomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D474D2B546E3E005DD4DC /* EbcomApp.swift */; };
+		7E0D47502B546E3E005DD4DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D474F2B546E3E005DD4DC /* ContentView.swift */; };
+		7E0D47522B546E40005DD4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D47512B546E40005DD4DC /* Assets.xcassets */; };
+		7E0D47552B546E40005DD4DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D47542B546E40005DD4DC /* Preview Assets.xcassets */; };
+		7E0D47572B546E40005DD4DC /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D47562B546E40005DD4DC /* CoreDataClient.swift */; };
+		7E0D475A2B546E40005DD4DC /* Ebcom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D47582B546E40005DD4DC /* Ebcom.xcdatamodeld */; };
+		7E0D47642B546E40005DD4DC /* Ebcom_Loader_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D47632B546E40005DD4DC /* Ebcom_Loader_Tests.swift */; };
+		7E0D476E2B546E40005DD4DC /* EbcomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D476D2B546E40005DD4DC /* EbcomUITests.swift */; };
+		7E0D47702B546E40005DD4DC /* EbcomUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D476F2B546E40005DD4DC /* EbcomUITestsLaunchTests.swift */; };
+		7E0D477D2B54714F005DD4DC /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D477C2B54714F005DD4DC /* MessagesView.swift */; };
+		7E0D477F2B547184005DD4DC /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D477E2B547184005DD4DC /* MessageView.swift */; };
+		7EE881B02B55B77F001E7DF8 /* BYekan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EE881AF2B55B77F001E7DF8 /* BYekan.ttf */; };
+		7EE881B22B55D4E4001E7DF8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881B12B55D4E4001E7DF8 /* Message.swift */; };
+		7EE881B42B55E674001E7DF8 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881B32B55E674001E7DF8 /* Tabbar.swift */; };
+		7EE881B62B570C0A001E7DF8 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881B52B570C0A001E7DF8 /* ActionButton.swift */; };
+		7EE881BF2B573EA0001E7DF8 /* UIHelperAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881BE2B573EA0001E7DF8 /* UIHelperAndExtensions.swift */; };
+		7EE881C12B573EE9001E7DF8 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881C02B573EE9001E7DF8 /* TabButton.swift */; };
+		7EE881C32B583449001E7DF8 /* LoaderHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881C22B583449001E7DF8 /* LoaderHelpers.swift */; };
+		7EE881C52B583474001E7DF8 /* MessageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881C42B583474001E7DF8 /* MessageLoader.swift */; };
+		7EE881C72B583480001E7DF8 /* MessageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881C62B583480001E7DF8 /* MessageMapper.swift */; };
+		7EE881C92B58348B001E7DF8 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881C82B58348B001E7DF8 /* HttpClient.swift */; };
+		7EE881CB2B583A35001E7DF8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881CA2B583A35001E7DF8 /* ViewModel.swift */; };
+		7EE881CD2B589569001E7DF8 /* UserDefaultsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881CC2B589569001E7DF8 /* UserDefaultsClient.swift */; };
+		7EE881CF2B5897BB001E7DF8 /* Ebcom_Cache_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881CE2B5897BB001E7DF8 /* Ebcom_Cache_Tests.swift */; };
+		7EE881D22B592676001E7DF8 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7EE881D12B592676001E7DF8 /* CachedAsyncImage */; };
+		7EE881D52B5ADE65001E7DF8 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881D42B5ADE65001E7DF8 /* Design.swift */; };
+		7EE881D92B5B1A8C001E7DF8 /* CacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881D82B5B1A8C001E7DF8 /* CacheLoader.swift */; };
+		7EE881DB2B5B1AF8001E7DF8 /* CacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881DA2B5B1AF8001E7DF8 /* CacheMapper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E0D47602B546E40005DD4DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E0D47422B546E3E005DD4DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E0D47492B546E3E005DD4DC;
+			remoteInfo = Ebcom;
+		};
+		7E0D476A2B546E40005DD4DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E0D47422B546E3E005DD4DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E0D47492B546E3E005DD4DC;
+			remoteInfo = Ebcom;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7E0D474A2B546E3E005DD4DC /* Ebcom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ebcom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0D474D2B546E3E005DD4DC /* EbcomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbcomApp.swift; sourceTree = "<group>"; };
+		7E0D474F2B546E3E005DD4DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7E0D47512B546E40005DD4DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E0D47542B546E40005DD4DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7E0D47562B546E40005DD4DC /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
+		7E0D47592B546E40005DD4DC /* Ebcom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ebcom.xcdatamodel; sourceTree = "<group>"; };
+		7E0D475F2B546E40005DD4DC /* EbcomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EbcomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0D47632B546E40005DD4DC /* Ebcom_Loader_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ebcom_Loader_Tests.swift; sourceTree = "<group>"; };
+		7E0D47692B546E40005DD4DC /* EbcomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EbcomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0D476D2B546E40005DD4DC /* EbcomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbcomUITests.swift; sourceTree = "<group>"; };
+		7E0D476F2B546E40005DD4DC /* EbcomUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbcomUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7E0D477C2B54714F005DD4DC /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		7E0D477E2B547184005DD4DC /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		7EE881AE2B55B4B8001E7DF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EE881AF2B55B77F001E7DF8 /* BYekan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BYekan.ttf; sourceTree = "<group>"; };
+		7EE881B12B55D4E4001E7DF8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7EE881B32B55E674001E7DF8 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		7EE881B52B570C0A001E7DF8 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		7EE881BE2B573EA0001E7DF8 /* UIHelperAndExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelperAndExtensions.swift; sourceTree = "<group>"; };
+		7EE881C02B573EE9001E7DF8 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		7EE881C22B583449001E7DF8 /* LoaderHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderHelpers.swift; sourceTree = "<group>"; };
+		7EE881C42B583474001E7DF8 /* MessageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLoader.swift; sourceTree = "<group>"; };
+		7EE881C62B583480001E7DF8 /* MessageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageMapper.swift; sourceTree = "<group>"; };
+		7EE881C82B58348B001E7DF8 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		7EE881CA2B583A35001E7DF8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		7EE881CC2B589569001E7DF8 /* UserDefaultsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsClient.swift; sourceTree = "<group>"; };
+		7EE881CE2B5897BB001E7DF8 /* Ebcom_Cache_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ebcom_Cache_Tests.swift; sourceTree = "<group>"; };
+		7EE881D42B5ADE65001E7DF8 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		7EE881D82B5B1A8C001E7DF8 /* CacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLoader.swift; sourceTree = "<group>"; };
+		7EE881DA2B5B1AF8001E7DF8 /* CacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMapper.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E0D47472B546E3E005DD4DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE881D22B592676001E7DF8 /* CachedAsyncImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E0D475C2B546E40005DD4DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E0D47662B546E40005DD4DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E0D47412B546E3E005DD4DC = {
+			isa = PBXGroup;
+			children = (
+				7E0D474C2B546E3E005DD4DC /* Ebcom */,
+				7E0D47622B546E40005DD4DC /* EbcomTests */,
+				7E0D476C2B546E40005DD4DC /* EbcomUITests */,
+				7E0D474B2B546E3E005DD4DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E0D474B2B546E3E005DD4DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D474A2B546E3E005DD4DC /* Ebcom.app */,
+				7E0D475F2B546E40005DD4DC /* EbcomTests.xctest */,
+				7E0D47692B546E40005DD4DC /* EbcomUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E0D474C2B546E3E005DD4DC /* Ebcom */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881AE2B55B4B8001E7DF8 /* Info.plist */,
+				7E0D474D2B546E3E005DD4DC /* EbcomApp.swift */,
+				7EE881B72B573D5D001E7DF8 /* Model */,
+				7EE881D32B592BC5001E7DF8 /* LoadFromAPI */,
+				7EE881BA2B573DAC001E7DF8 /* LoadFromCache */,
+				7EE881B82B573D71001E7DF8 /* ViewModel */,
+				7EE881B92B573D78001E7DF8 /* View */,
+				7EE881D62B5B1170001E7DF8 /* Resources */,
+				7EE881BD2B573E7D001E7DF8 /* Extensions & Helpers */,
+				7EE881D72B5B11B7001E7DF8 /* Supporting Files */,
+				7E0D47532B546E40005DD4DC /* Preview Content */,
+			);
+			path = Ebcom;
+			sourceTree = "<group>";
+		};
+		7E0D47532B546E40005DD4DC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D47542B546E40005DD4DC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7E0D47622B546E40005DD4DC /* EbcomTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D47632B546E40005DD4DC /* Ebcom_Loader_Tests.swift */,
+				7EE881CE2B5897BB001E7DF8 /* Ebcom_Cache_Tests.swift */,
+			);
+			path = EbcomTests;
+			sourceTree = "<group>";
+		};
+		7E0D476C2B546E40005DD4DC /* EbcomUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D476D2B546E40005DD4DC /* EbcomUITests.swift */,
+				7E0D476F2B546E40005DD4DC /* EbcomUITestsLaunchTests.swift */,
+			);
+			path = EbcomUITests;
+			sourceTree = "<group>";
+		};
+		7EE881B72B573D5D001E7DF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881B12B55D4E4001E7DF8 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7EE881B82B573D71001E7DF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881CA2B583A35001E7DF8 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7EE881B92B573D78001E7DF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881BC2B573E03001E7DF8 /* Components */,
+				7EE881BB2B573DF5001E7DF8 /* Screens */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7EE881BA2B573DAC001E7DF8 /* LoadFromCache */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881D82B5B1A8C001E7DF8 /* CacheLoader.swift */,
+				7EE881DA2B5B1AF8001E7DF8 /* CacheMapper.swift */,
+				7E0D47562B546E40005DD4DC /* CoreDataClient.swift */,
+				7EE881CC2B589569001E7DF8 /* UserDefaultsClient.swift */,
+			);
+			path = LoadFromCache;
+			sourceTree = "<group>";
+		};
+		7EE881BB2B573DF5001E7DF8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D474F2B546E3E005DD4DC /* ContentView.swift */,
+				7E0D477C2B54714F005DD4DC /* MessagesView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		7EE881BC2B573E03001E7DF8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D477E2B547184005DD4DC /* MessageView.swift */,
+				7EE881B32B55E674001E7DF8 /* Tabbar.swift */,
+				7EE881B52B570C0A001E7DF8 /* ActionButton.swift */,
+				7EE881C02B573EE9001E7DF8 /* TabButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7EE881BD2B573E7D001E7DF8 /* Extensions & Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881BE2B573EA0001E7DF8 /* UIHelperAndExtensions.swift */,
+				7EE881C22B583449001E7DF8 /* LoaderHelpers.swift */,
+				7EE881D42B5ADE65001E7DF8 /* Design.swift */,
+			);
+			path = "Extensions & Helpers";
+			sourceTree = "<group>";
+		};
+		7EE881D32B592BC5001E7DF8 /* LoadFromAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881C42B583474001E7DF8 /* MessageLoader.swift */,
+				7EE881C62B583480001E7DF8 /* MessageMapper.swift */,
+				7EE881C82B58348B001E7DF8 /* HttpClient.swift */,
+			);
+			path = LoadFromAPI;
+			sourceTree = "<group>";
+		};
+		7EE881D62B5B1170001E7DF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881AF2B55B77F001E7DF8 /* BYekan.ttf */,
+				7E0D47512B546E40005DD4DC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7EE881D72B5B11B7001E7DF8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E0D47582B546E40005DD4DC /* Ebcom.xcdatamodeld */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E0D47492B546E3E005DD4DC /* Ebcom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E0D47732B546E40005DD4DC /* Build configuration list for PBXNativeTarget "Ebcom" */;
+			buildPhases = (
+				7E0D47462B546E3E005DD4DC /* Sources */,
+				7E0D47472B546E3E005DD4DC /* Frameworks */,
+				7E0D47482B546E3E005DD4DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ebcom;
+			packageProductDependencies = (
+				7EE881D12B592676001E7DF8 /* CachedAsyncImage */,
+			);
+			productName = Ebcom;
+			productReference = 7E0D474A2B546E3E005DD4DC /* Ebcom.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E0D475E2B546E40005DD4DC /* EbcomTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E0D47762B546E40005DD4DC /* Build configuration list for PBXNativeTarget "EbcomTests" */;
+			buildPhases = (
+				7E0D475B2B546E40005DD4DC /* Sources */,
+				7E0D475C2B546E40005DD4DC /* Frameworks */,
+				7E0D475D2B546E40005DD4DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E0D47612B546E40005DD4DC /* PBXTargetDependency */,
+			);
+			name = EbcomTests;
+			productName = EbcomTests;
+			productReference = 7E0D475F2B546E40005DD4DC /* EbcomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7E0D47682B546E40005DD4DC /* EbcomUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E0D47792B546E40005DD4DC /* Build configuration list for PBXNativeTarget "EbcomUITests" */;
+			buildPhases = (
+				7E0D47652B546E40005DD4DC /* Sources */,
+				7E0D47662B546E40005DD4DC /* Frameworks */,
+				7E0D47672B546E40005DD4DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E0D476B2B546E40005DD4DC /* PBXTargetDependency */,
+			);
+			name = EbcomUITests;
+			productName = EbcomUITests;
+			productReference = 7E0D47692B546E40005DD4DC /* EbcomUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E0D47422B546E3E005DD4DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					7E0D47492B546E3E005DD4DC = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					7E0D475E2B546E40005DD4DC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 7E0D47492B546E3E005DD4DC;
+					};
+					7E0D47682B546E40005DD4DC = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 7E0D47492B546E3E005DD4DC;
+					};
+				};
+			};
+			buildConfigurationList = 7E0D47452B546E3E005DD4DC /* Build configuration list for PBXProject "Ebcom" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E0D47412B546E3E005DD4DC;
+			packageReferences = (
+				7EE881D02B592676001E7DF8 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
+			productRefGroup = 7E0D474B2B546E3E005DD4DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E0D47492B546E3E005DD4DC /* Ebcom */,
+				7E0D475E2B546E40005DD4DC /* EbcomTests */,
+				7E0D47682B546E40005DD4DC /* EbcomUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E0D47482B546E3E005DD4DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE881B02B55B77F001E7DF8 /* BYekan.ttf in Resources */,
+				7E0D47552B546E40005DD4DC /* Preview Assets.xcassets in Resources */,
+				7E0D47522B546E40005DD4DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E0D475D2B546E40005DD4DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E0D47672B546E40005DD4DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E0D47462B546E3E005DD4DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE881D92B5B1A8C001E7DF8 /* CacheLoader.swift in Sources */,
+				7EE881DB2B5B1AF8001E7DF8 /* CacheMapper.swift in Sources */,
+				7EE881C32B583449001E7DF8 /* LoaderHelpers.swift in Sources */,
+				7E0D477F2B547184005DD4DC /* MessageView.swift in Sources */,
+				7EE881CD2B589569001E7DF8 /* UserDefaultsClient.swift in Sources */,
+				7E0D477D2B54714F005DD4DC /* MessagesView.swift in Sources */,
+				7E0D475A2B546E40005DD4DC /* Ebcom.xcdatamodeld in Sources */,
+				7EE881B42B55E674001E7DF8 /* Tabbar.swift in Sources */,
+				7E0D47572B546E40005DD4DC /* CoreDataClient.swift in Sources */,
+				7EE881CB2B583A35001E7DF8 /* ViewModel.swift in Sources */,
+				7EE881C52B583474001E7DF8 /* MessageLoader.swift in Sources */,
+				7EE881D52B5ADE65001E7DF8 /* Design.swift in Sources */,
+				7EE881B62B570C0A001E7DF8 /* ActionButton.swift in Sources */,
+				7EE881C72B583480001E7DF8 /* MessageMapper.swift in Sources */,
+				7E0D47502B546E3E005DD4DC /* ContentView.swift in Sources */,
+				7EE881C92B58348B001E7DF8 /* HttpClient.swift in Sources */,
+				7EE881BF2B573EA0001E7DF8 /* UIHelperAndExtensions.swift in Sources */,
+				7EE881C12B573EE9001E7DF8 /* TabButton.swift in Sources */,
+				7E0D474E2B546E3E005DD4DC /* EbcomApp.swift in Sources */,
+				7EE881B22B55D4E4001E7DF8 /* Message.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E0D475B2B546E40005DD4DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E0D47642B546E40005DD4DC /* Ebcom_Loader_Tests.swift in Sources */,
+				7EE881CF2B5897BB001E7DF8 /* Ebcom_Cache_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E0D47652B546E40005DD4DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E0D476E2B546E40005DD4DC /* EbcomUITests.swift in Sources */,
+				7E0D47702B546E40005DD4DC /* EbcomUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E0D47612B546E40005DD4DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E0D47492B546E3E005DD4DC /* Ebcom */;
+			targetProxy = 7E0D47602B546E40005DD4DC /* PBXContainerItemProxy */;
+		};
+		7E0D476B2B546E40005DD4DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E0D47492B546E3E005DD4DC /* Ebcom */;
+			targetProxy = 7E0D476A2B546E40005DD4DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7E0D47712B546E40005DD4DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7E0D47722B546E40005DD4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E0D47742B546E40005DD4DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ebcom/Preview Content\"";
+				DEVELOPMENT_TEAM = YVTC4WR9M8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ebcom/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ahvaraki.Ebcom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E0D47752B546E40005DD4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Ebcom/Preview Content\"";
+				DEVELOPMENT_TEAM = YVTC4WR9M8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ebcom/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ahvaraki.Ebcom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7E0D47772B546E40005DD4DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVTC4WR9M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ahvaraki.EbcomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ebcom.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ebcom";
+			};
+			name = Debug;
+		};
+		7E0D47782B546E40005DD4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVTC4WR9M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ahvaraki.EbcomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ebcom.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Ebcom";
+			};
+			name = Release;
+		};
+		7E0D477A2B546E40005DD4DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVTC4WR9M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ahvaraki.EbcomUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ebcom;
+			};
+			name = Debug;
+		};
+		7E0D477B2B546E40005DD4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVTC4WR9M8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ahvaraki.EbcomUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ebcom;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E0D47452B546E3E005DD4DC /* Build configuration list for PBXProject "Ebcom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E0D47712B546E40005DD4DC /* Debug */,
+				7E0D47722B546E40005DD4DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E0D47732B546E40005DD4DC /* Build configuration list for PBXNativeTarget "Ebcom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E0D47742B546E40005DD4DC /* Debug */,
+				7E0D47752B546E40005DD4DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E0D47762B546E40005DD4DC /* Build configuration list for PBXNativeTarget "EbcomTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E0D47772B546E40005DD4DC /* Debug */,
+				7E0D47782B546E40005DD4DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E0D47792B546E40005DD4DC /* Build configuration list for PBXNativeTarget "EbcomUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E0D477A2B546E40005DD4DC /* Debug */,
+				7E0D477B2B546E40005DD4DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7EE881D02B592676001E7DF8 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7EE881D12B592676001E7DF8 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EE881D02B592676001E7DF8 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7E0D47582B546E40005DD4DC /* Ebcom.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7E0D47592B546E40005DD4DC /* Ebcom.xcdatamodel */,
+			);
+			currentVersion = 7E0D47592B546E40005DD4DC /* Ebcom.xcdatamodel */;
+			path = Ebcom.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7E0D47422B546E3E005DD4DC /* Project object */;
+}
