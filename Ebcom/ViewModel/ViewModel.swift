@@ -16,9 +16,7 @@ class ViewModel: ObservableObject {
     }
 
     func load() {
-        
-//        cache.clearCache()
-        
+                
         if cache.hasValue() {
             print("Data exists in cache")
             do {

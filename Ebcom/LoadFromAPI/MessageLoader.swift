@@ -3,7 +3,7 @@
 
 import Foundation
 
-public final class MessageLoader {
+public final class MessageLoader: ObservableObject {
     private let client: HTTPClient
     private let url : URL
     

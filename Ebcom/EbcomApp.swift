@@ -5,20 +5,18 @@ import SwiftUI
 
 @main
 struct EbcomApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
 
-    let vm = MessageLoader(
-        url: URL(string: "https://run.mocky.io/v3/729e846c-80db-4c52-8765-9a762078bc82")!,
-                           client: URLSessionHTTPClient(session: URLSession(configuration: .default)))
+    let vm = ViewModel(apiCall: MessageLoader(
+        url: URL(string: "https://run.mocky.io/v3/4f4aff79-37c5-4392-9820-878f0cf6f5d9")!,
+        client: URLSessionHTTPClient(session: URLSession(configuration: .default))), cache: CacheLoader(client: MessageCache.shared))
+
     
     var body: some Scene {
         WindowGroup {
             
-            MessagesView()
-            
-            
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MessagesView(vm: vm)
+                .environmentObject(vm)
         }
     }
 }
