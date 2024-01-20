@@ -8,10 +8,12 @@ public final class CacheLoader {
     private let client: UserDefaultsClient
     private let cacheKey = "message_cache"
     
+    // Initializes a new instance of the `CacheLoader` class.
     public init(client: UserDefaultsClient){
         self.client = client
     }
     
+    // Stores Messages in cache
     public func storeToCache(_ messages: [Message]) {
         guard let (_ , jsonString) = try? encode(messages) else {
             return
@@ -19,6 +21,7 @@ public final class CacheLoader {
         client.saveJson(jsonString)
     }
 
+    // Loads Messages using the completion handler with the result.
     public func readFromCache(completion : @escaping ([Message]) -> Void) throws {
         guard let encodedMessages = client.getJson() else {
             throw MessageLoader.MessageLoaderError.invalidData
@@ -33,6 +36,7 @@ public final class CacheLoader {
         }
     }
     
+    // Updates Messages values in cache
     public func updateValue(messages: inout [Message], forKey: String, id: UUID, status: Bool) {
         if let index = messages.firstIndex(where: { $0.id == id }) {
             var updatedMessage = messages[index]
@@ -49,6 +53,7 @@ public final class CacheLoader {
         storeToCache(messages)
     }
     
+    // Sorts Messages using the completion handler with the result.
     public func sortMessages(_ messages: [Message]) -> [Message] {
         return messages.sorted { lhs, rhs in
             if lhs.isRead && !rhs.isRead {
@@ -61,14 +66,17 @@ public final class CacheLoader {
         }
     }
     
+    // Checks for exisance of Messages in cache
     public func hasValue() -> Bool {
         return self.client.hasValue()
     }
     
+    // Clears the Messages cache
     public func clearCache() {
         return self.client.clearCache()
     }
     
+    // Maps retrieved Messages to the Message model
     private func map(_ data: Data) -> MessageLoader.MessageResult {
         do {
             let Messages = try MessagesMapper.map(data)
@@ -79,6 +87,7 @@ public final class CacheLoader {
         }
     }
     
+    // Maps messages from model to Data in order to store them.
     private func encode(_ messages: [Message]) throws -> (Data, String) {
         do {
             return try MessagesMapper.encoder(messages)

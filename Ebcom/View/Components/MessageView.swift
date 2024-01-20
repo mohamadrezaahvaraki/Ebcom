@@ -11,6 +11,7 @@ struct MessageView: View {
     @State var expCollapse: Bool = false
     @Binding var showSelection: Bool
     @Binding var selectedToRemove: [Message]
+    @State var hasBeenRead: Bool = false
 
     var body: some View {
         
@@ -121,7 +122,8 @@ struct MessageView: View {
                     Button(action: {
                         withAnimation {
                             expCollapse.toggle()
-//                            vm.setRead(id: messageBody.id, status: false)
+                            hasBeenRead = true
+                            vm.setRead(id: messageBody.id, status: true)
                         }
 
                     }, label: {
@@ -140,7 +142,7 @@ struct MessageView: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 12)
-                    .fill((!messageBody.isRead) ? Color.init(uiColor: .quaternarySystemFill) : Color.white)
+                    .fill((!messageBody.isRead || hasBeenRead) ? Color.init(uiColor: .quaternarySystemFill) : Color.white)
                     .shadow(radius: 1)
                     .padding([.leading,.trailing])
             )

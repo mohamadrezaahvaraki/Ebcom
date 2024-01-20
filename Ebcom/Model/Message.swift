@@ -3,7 +3,7 @@
 
 import Foundation
 
-public struct Message: Codable , Identifiable,Hashable, Equatable {
+public struct Message: Codable , Equatable {
     
     public var id : UUID
     public let title: String
@@ -11,7 +11,7 @@ public struct Message: Codable , Identifiable,Hashable, Equatable {
     public let message: String
     public var expireDate: String = "۱۴۰۰/۱۱/۳۰ - ۱۳:۰۰"
     public let imageURL: String
-    public var isRead: Bool
+    public var isRead: Bool = false
     public var isTagged: Bool = false
     
 }

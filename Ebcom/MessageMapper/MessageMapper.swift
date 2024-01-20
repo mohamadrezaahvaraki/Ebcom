@@ -3,8 +3,7 @@
 
 import Foundation
 
-// Maps the response data to an array of `MessageBased on the provided code, here's an explanation of the comments/documentation:
-
+// Maps the response data to an array of `MessageBased on the provided code:
 internal final class MessagesMapper {
     
     private struct MessageItem: Decodable {

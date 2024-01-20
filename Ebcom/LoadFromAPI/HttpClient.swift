@@ -31,22 +31,18 @@ public class URLSessionHTTPClient: HTTPClient {
     // Performs an asynchronous GET request using URLSession and calls the completion handler with the result.
     public func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) async throws {
         
-        guard let url = URL(string:"https://run.mocky.io/v3/4f4aff79-37c5-4392-9820-878f0cf6f5d9") else {
-            fatalError("Could not create URL object")
-        }
-        
         var req = URLRequest(url: url,timeoutInterval: 5)
         req.httpMethod = "GET"
        
         return try await withCheckedThrowingContinuation { continuation in
             session.dataTask(with: req ) { data , response , error in
                 if error != nil {
-                    continuation.resume(throwing: completion(.failure(URLSessionAsyncErrors.missingResponseData)) as! Error)
+                    continuation.resume(throwing: URLSessionAsyncErrors.missingResponseData)
                     return
                 }
                 
                 guard let data = data else {
-                    continuation.resume(throwing: completion(.failure(URLSessionAsyncErrors.invalidUrlResponse)) as! Error)
+                    continuation.resume(throwing: URLSessionAsyncErrors.invalidUrlResponse)
                     return
                 }
                 continuation.resume(returning: completion(.success(data, response as! HTTPURLResponse)))

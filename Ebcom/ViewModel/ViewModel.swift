@@ -16,7 +16,7 @@ class ViewModel: ObservableObject {
     }
 
     func load() {
-                
+                        
         if cache.hasValue() {
             print("Data exists in cache")
             do {
@@ -39,19 +39,24 @@ class ViewModel: ObservableObject {
     private func loadFromLoader() {
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
-            self.apiCall.load { [weak self] result in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
-                    switch result {
-                    case .failure(let error):
-                        self.messagesError = error
-                    case .success(let messages):
-                        let sortedMessages = self.cache.sortMessages(messages)
-                        self.messages = sortedMessages
-                        self.cache.storeToCache(sortedMessages)
+            do {
+                try self.apiCall.load { [weak self] result in
+                    guard let self = self else { return }
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .failure(let error):
+                            self.messagesError = error
+                        case .success(let messages):
+                            let sortedMessages = self.cache.sortMessages(messages)
+                            self.messages = sortedMessages
+                            self.cache.storeToCache(sortedMessages)
+                        }
                     }
                 }
+            }catch {
+                print(error.localizedDescription)
             }
+
         }
     }
 

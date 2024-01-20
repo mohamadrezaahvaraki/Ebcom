@@ -28,8 +28,8 @@ public final class MessageLoader: ObservableObject {
         self.client = client
     }
     
-    // Loads Messages asynchronously and calls the completion handler with the result.
-    public func load(completion: @escaping (MessageResult) -> Void) {
+    // Loads Messages asynchronously the completion handler with the result.
+    public func load(completion: @escaping (MessageResult) -> Void) throws {
         
         Task {
             do {
@@ -42,12 +42,12 @@ public final class MessageLoader: ObservableObject {
                     }
                 }
             }catch {
-                print(error)
+                throw URLSessionHTTPClient.URLSessionAsyncErrors.missingResponseData
             }
         }
     }
     
-    // Maps the response data to a `Result` type.
+    // Maps the response data to a `MesssageResult` type.
     private func map(_ data: Data, from response: HTTPURLResponse) -> MessageResult {
         do {
             let Messages = try MessagesMapper.map(data, response)
