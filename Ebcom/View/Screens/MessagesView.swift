@@ -4,8 +4,7 @@
 import SwiftUI
 
 struct MessagesView: View {
-    
-    @ObservedObject var vm : ViewModel
+    @ObservedObject var vm: ViewModel
     @State var messages: [Message] = []
     @State var selectedMessages: [Message] = []
     @State var selectedMessage: Message?
@@ -14,63 +13,18 @@ struct MessagesView: View {
     @State private var messageCollapse = false
     
     var body: some View {
-        VStack(spacing: 1, content: {
-            Tabbar(selectedTab: $selectedTab, messageCount: vm.messages.filter{ return $0.isRead }.count )
+        VStack(spacing: 1) {
+            Tabbar(selectedTab: $selectedTab, messageCount: vm.messages.filter{ return $0.isRead }.count)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.05, alignment: .leading)
                 .background(
                     RoundedRectangle(cornerRadius: 12)
                         .fill(Color.init(hex: "#CFF5FF"))
                 )
             
-            List {
-                ForEach(selectedTab == "general" ? vm.messages : vm.messages.filter{ return $0.isTagged }, id: \.id) { message in
-                    MessageView(messageBody: message, showSelection: $showSelectionBox , selectedToRemove: $selectedMessages)
-                        .buttonStyle(.plain)
-                        .onTapGesture{}.onLongPressGesture(perform: {
-                            withAnimation {
-                                self.showSelectionBox.toggle()
-                                self.selectedMessages.append(message)
-                            }
-                        })
-                        .environmentObject(vm)
-
-                }
-                .listRowSeparator(.hidden)
-                .listRowBackground(Color.init(hex: "#F4F9FA"))
-                
-            }
-            .overlay(Group {
-                if vm.messages.isEmpty {
-                    VStack(spacing: 25) {
-                        Image("emptyView")
-                        Text("هیچ پیامی جهت نمایش موجود نیست")
-                            .environment(\.layoutDirection, .rightToLeft)
-                            .font(Font.get(.body))
-
-                    }
-                }
-            })
-            .listStyle(.plain)
-            .environment(\.layoutDirection, .rightToLeft)
+            MessagesListView(vm: vm, selectedTab: $selectedTab, selectedMessages: $selectedMessages, showSelectionBox: $showSelectionBox)
             
-            HStack(alignment: .center) {
-                ActionButton(title: "حذف",type: .delete,action: {
-                    withAnimation {
-                        vm.removeFromCache(items: selectedMessages)
-                        showSelectionBox.toggle()
-                    }
-                })
-                ActionButton(title: "انصراف",type: .cancel,action: {
-                    withAnimation {
-                        showSelectionBox.toggle()
-                        selectedMessages.removeAll()
-                    }
-                })
-            }
-            .frame(height: 40)
-            .padding()
-            .isHidden(!showSelectionBox, remove: true)
-        })
+            SelectionButtonsView(vm: vm,selectedMessages: $selectedMessages, showSelectionBox: $showSelectionBox)
+        }
         .background(Color.init(hex: "#F4F9FA"))
         .onAppear {
             vm.load()
