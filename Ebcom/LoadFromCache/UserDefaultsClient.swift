@@ -3,14 +3,14 @@
 
 import Foundation
 
-protocol UserDefaultsClient {
+public protocol UserDefaultsClient {
     func saveJson(_ json: String)
     func getJson() -> String?
     func clearCache()
     func hasValue() -> Bool
 }
 
-class MessageCache : UserDefaultsClient {
+public class MessageCache : UserDefaultsClient {
     
     static let shared = MessageCache()
     private let defaults = UserDefaults.standard
@@ -20,20 +20,20 @@ class MessageCache : UserDefaultsClient {
     }
 
 
-    func saveJson(_ json: String) {
+    public func saveJson(_ json: String) {
         defaults.set(json, forKey: cacheKey)
     }
 
-    func getJson() -> String? {
+    public func getJson() -> String? {
         return defaults.string(forKey: cacheKey)
     }
 
-    func clearCache() {
+    public func clearCache() {
         defaults.removeObject(forKey: cacheKey)
         URLCache().removeAllCachedResponses()
     }
     
-    func hasValue() -> Bool {
+    public func hasValue() -> Bool {
         return cache != nil
     }
         

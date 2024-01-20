@@ -28,7 +28,7 @@ final class MessageLoaderTests : XCTestCase {
         let (sut,client) = makeSUT(url: url)
         
         sut.load { _ in }
-        sleep(3)
+        sleep(4)
         sut.load { _ in }
 
         XCTAssertEqual(client.requestedURLs,[url,url])
@@ -98,8 +98,8 @@ final class MessageLoaderTests : XCTestCase {
         return (sut,client)
     }
     
-    private func expect(_ sut: MessageLoader , toCompleteWithResult result: MessageLoader.Result,when action: () -> Void, file: StaticString  = #file, line: UInt = #line ) {
-        var capturedResults = [MessageLoader.Result]()
+    private func expect(_ sut: MessageLoader , toCompleteWithResult result: MessageLoader.MessageResult,when action: () -> Void, file: StaticString  = #file, line: UInt = #line ) {
+        var capturedResults = [MessageLoader.MessageResult]()
         sut.load { capturedResults.append($0) }
         sleep(2)
         action()

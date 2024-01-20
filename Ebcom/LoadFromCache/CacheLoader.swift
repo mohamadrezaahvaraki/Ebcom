@@ -3,44 +3,37 @@
 
 import Foundation
 
-class CacheLoader {
+public final class CacheLoader {
     
     private let client: UserDefaultsClient
     private let cacheKey = "message_cache"
-
-    public enum Result : Equatable{
-        case success([Message])
-        case failure(MessageLoaderError)
-    }
-    
-    // Represents the possible errors that can occur during Message loading.
-    public enum MessageLoaderError : Swift.Error {
-        case connectivity
-        case invalidData
-    }
-    
     
     public init(client: UserDefaultsClient){
         self.client = client
     }
     
-    func storeToCache(_ messages: [Message]) {
-        guard let jsonData = try? JSONEncoder().encode(messages),
-              let jsonString = String(data: jsonData, encoding: .utf8) else {
+    public func storeToCache(_ messages: [Message]) {
+        guard let (_ , jsonString) = try? encode(messages) else {
             return
         }
         client.saveJson(jsonString)
     }
 
-    func readFromCache(completion : @escaping ([Message]) -> Void) {
-        guard let encodedMessages = client.getJson(),
-              let messages = try? JSONDecoder().decode([Message].self, from: encodedMessages.data(using: .utf8)!) else {
-            return
+    public func readFromCache(completion : @escaping ([Message]) -> Void) throws {
+        guard let encodedMessages = client.getJson() else {
+            throw MessageLoader.MessageLoaderError.invalidData
         }
-        completion(sortMessages(messages))
+        let res = map(encodedMessages.data(using: .utf8)!)
+        switch res {
+        case .success(let messages):
+            completion(sortMessages(messages))
+            
+        case .failure(let error):
+            throw error
+        }
     }
     
-    func updateValue(messages: inout [Message], forKey: String, id: UUID, status: Bool) {
+    public func updateValue(messages: inout [Message], forKey: String, id: UUID, status: Bool) {
         if let index = messages.firstIndex(where: { $0.id == id }) {
             var updatedMessage = messages[index]
             switch forKey {
@@ -56,7 +49,7 @@ class CacheLoader {
         storeToCache(messages)
     }
     
-    func sortMessages(_ messages: [Message]) -> [Message] {
+    public func sortMessages(_ messages: [Message]) -> [Message] {
         return messages.sorted { lhs, rhs in
             if lhs.isRead && !rhs.isRead {
                 return true
@@ -68,8 +61,30 @@ class CacheLoader {
         }
     }
     
-    func hasValue() -> Bool {
+    public func hasValue() -> Bool {
         return self.client.hasValue()
     }
     
+    public func clearCache() {
+        return self.client.clearCache()
+    }
+    
+    private func map(_ data: Data) -> MessageLoader.MessageResult {
+        do {
+            let Messages = try MessagesMapper.map(data)
+            return .success(Messages)
+        }catch {
+            print(error)
+            return .failure(.invalidData)
+        }
+    }
+    
+    private func encode(_ messages: [Message]) throws -> (Data, String) {
+        do {
+            return try MessagesMapper.encoder(messages)
+        }catch {
+            print(error)
+            throw error
+        }
+    }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7E0D474E2B546E3E005DD4DC /* EbcomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D474D2B546E3E005DD4DC /* EbcomApp.swift */; };
-		7E0D47502B546E3E005DD4DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D474F2B546E3E005DD4DC /* ContentView.swift */; };
 		7E0D47522B546E40005DD4DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D47512B546E40005DD4DC /* Assets.xcassets */; };
 		7E0D47552B546E40005DD4DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E0D47542B546E40005DD4DC /* Preview Assets.xcassets */; };
 		7E0D47572B546E40005DD4DC /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0D47562B546E40005DD4DC /* CoreDataClient.swift */; };
@@ -34,7 +33,6 @@
 		7EE881D22B592676001E7DF8 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7EE881D12B592676001E7DF8 /* CachedAsyncImage */; };
 		7EE881D52B5ADE65001E7DF8 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881D42B5ADE65001E7DF8 /* Design.swift */; };
 		7EE881D92B5B1A8C001E7DF8 /* CacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881D82B5B1A8C001E7DF8 /* CacheLoader.swift */; };
-		7EE881DB2B5B1AF8001E7DF8 /* CacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE881DA2B5B1AF8001E7DF8 /* CacheMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +55,6 @@
 /* Begin PBXFileReference section */
 		7E0D474A2B546E3E005DD4DC /* Ebcom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ebcom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0D474D2B546E3E005DD4DC /* EbcomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbcomApp.swift; sourceTree = "<group>"; };
-		7E0D474F2B546E3E005DD4DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7E0D47512B546E40005DD4DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E0D47542B546E40005DD4DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7E0D47562B546E40005DD4DC /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
@@ -85,7 +82,6 @@
 		7EE881CE2B5897BB001E7DF8 /* Ebcom_Cache_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ebcom_Cache_Tests.swift; sourceTree = "<group>"; };
 		7EE881D42B5ADE65001E7DF8 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		7EE881D82B5B1A8C001E7DF8 /* CacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLoader.swift; sourceTree = "<group>"; };
-		7EE881DA2B5B1AF8001E7DF8 /* CacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +138,7 @@
 				7EE881B72B573D5D001E7DF8 /* Model */,
 				7EE881D32B592BC5001E7DF8 /* LoadFromAPI */,
 				7EE881BA2B573DAC001E7DF8 /* LoadFromCache */,
+				7EE881DC2B5BB663001E7DF8 /* MessageMapper */,
 				7EE881B82B573D71001E7DF8 /* ViewModel */,
 				7EE881B92B573D78001E7DF8 /* View */,
 				7EE881D62B5B1170001E7DF8 /* Resources */,
@@ -207,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				7EE881D82B5B1A8C001E7DF8 /* CacheLoader.swift */,
-				7EE881DA2B5B1AF8001E7DF8 /* CacheMapper.swift */,
 				7E0D47562B546E40005DD4DC /* CoreDataClient.swift */,
 				7EE881CC2B589569001E7DF8 /* UserDefaultsClient.swift */,
 			);
@@ -217,7 +213,6 @@
 		7EE881BB2B573DF5001E7DF8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				7E0D474F2B546E3E005DD4DC /* ContentView.swift */,
 				7E0D477C2B54714F005DD4DC /* MessagesView.swift */,
 			);
 			path = Screens;
@@ -248,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				7EE881C42B583474001E7DF8 /* MessageLoader.swift */,
-				7EE881C62B583480001E7DF8 /* MessageMapper.swift */,
 				7EE881C82B58348B001E7DF8 /* HttpClient.swift */,
 			);
 			path = LoadFromAPI;
@@ -269,6 +263,14 @@
 				7E0D47582B546E40005DD4DC /* Ebcom.xcdatamodeld */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EE881DC2B5BB663001E7DF8 /* MessageMapper */ = {
+			isa = PBXGroup;
+			children = (
+				7EE881C62B583480001E7DF8 /* MessageMapper.swift */,
+			);
+			path = MessageMapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,7 +411,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EE881D92B5B1A8C001E7DF8 /* CacheLoader.swift in Sources */,
-				7EE881DB2B5B1AF8001E7DF8 /* CacheMapper.swift in Sources */,
 				7EE881C32B583449001E7DF8 /* LoaderHelpers.swift in Sources */,
 				7E0D477F2B547184005DD4DC /* MessageView.swift in Sources */,
 				7EE881CD2B589569001E7DF8 /* UserDefaultsClient.swift in Sources */,
@@ -422,7 +423,6 @@
 				7EE881D52B5ADE65001E7DF8 /* Design.swift in Sources */,
 				7EE881B62B570C0A001E7DF8 /* ActionButton.swift in Sources */,
 				7EE881C72B583480001E7DF8 /* MessageMapper.swift in Sources */,
-				7E0D47502B546E3E005DD4DC /* ContentView.swift in Sources */,
 				7EE881C92B58348B001E7DF8 /* HttpClient.swift in Sources */,
 				7EE881BF2B573EA0001E7DF8 /* UIHelperAndExtensions.swift in Sources */,
 				7EE881C12B573EE9001E7DF8 /* TabButton.swift in Sources */,

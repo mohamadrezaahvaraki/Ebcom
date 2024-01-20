@@ -16,11 +16,21 @@ class ViewModel: ObservableObject {
     }
 
     func load() {
-                
+        
+//        cache.clearCache()
+        
         if cache.hasValue() {
             print("Data exists in cache")
-            cache.readFromCache { [self] messages in
-                self.messages = cache.sortMessages(messages)
+            do {
+                try cache.readFromCache { [weak self] messages in
+                    guard let self = self else { return }
+                    DispatchQueue.main.async {
+                        self.messages = self.cache.sortMessages(messages)
+                    }
+                }
+            }catch {
+                print("Data decode error from cache")
+                loadFromLoader()
             }
         } else {
             print("Data does not exist in cache")
@@ -38,8 +48,9 @@ class ViewModel: ObservableObject {
                     case .failure(let error):
                         self.messagesError = error
                     case .success(let messages):
-                        self.messages = self.cache.sortMessages(messages)
-                        self.cache.storeToCache(self.cache.sortMessages(messages))
+                        let sortedMessages = self.cache.sortMessages(messages)
+                        self.messages = sortedMessages
+                        self.cache.storeToCache(sortedMessages)
                     }
                 }
             }
@@ -48,19 +59,26 @@ class ViewModel: ObservableObject {
 
     func setTagged(id: UUID, status: Bool) {
         cache.updateValue(messages: &messages, forKey: "isTagged", id: id, status: status)
+        cache.storeToCache(messages)
     }
 
     func setRead(id: UUID, status: Bool) {
-        cache.updateValue(messages: &messages,forKey: "isRead", id: id, status: status)
+        cache.updateValue(messages: &messages, forKey: "isRead", id: id, status: status)
+        cache.storeToCache(messages)
     }
-    
+
     func updateCache() {
         cache.storeToCache(messages)
     }
-    
+
     func removeFromCache(items: [Message]) {
         let toBeSaved = messages.filter { !items.contains($0) }
         cache.storeToCache(toBeSaved)
-        cache.readFromCache(completion: { messages in self.messages = messages })
+        try! cache.readFromCache { [weak self] messages in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.messages = messages
+            }
+        }
     }
 }

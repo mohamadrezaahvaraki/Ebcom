@@ -35,4 +35,24 @@ internal final class MessagesMapper {
             throw error
         }
     }
+    
+    internal static func map (_ data: Data) throws -> [Message] {
+        do {
+            let root = try JSONDecoder().decode([Message].self, from: data)
+            return root.map{ $0 }
+        }catch {
+            print("Error decoding \(error)")
+            throw error
+        }
+    }
+    
+    internal static func encoder (_ messages: [Message]) throws -> (Data,String) {
+        guard let jsonData = try? JSONEncoder().encode(messages),
+              let jsonString = String(data: jsonData, encoding: .utf8) else {
+            throw MessageLoader.MessageLoaderError.invalidData
+        }
+        return (jsonData, jsonString)
+    }
+    
+    
 }

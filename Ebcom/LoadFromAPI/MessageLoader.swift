@@ -10,15 +10,16 @@ public final class MessageLoader {
     // Represents the result of loading Messages.
     // - success: Loading Messages was successful, providing an array of `Message` objects.
     // - failure: Loading Messages failed, providing a `MessageLoaderError`.
-    public enum Result : Equatable{
+    public enum MessageResult : Equatable{
         case success([Message])
         case failure(MessageLoaderError)
     }
     
     // Represents the possible errors that can occur during Message loading.
-    public enum MessageLoaderError : Swift.Error {
-        case connectivity
-        case invalidData
+    public enum MessageLoaderError : String, Swift.Error {
+        case connectivity = "Connection Error"
+        case invalidData = "Decoding Problem"
+        case doesNotExistInCache = "Data does not exists in cache"
     }
     
     // Initializes a new instance of the `MessageLoader` class.
@@ -28,7 +29,7 @@ public final class MessageLoader {
     }
     
     // Loads Messages asynchronously and calls the completion handler with the result.
-    public func load(completion: @escaping (Result) -> Void) {
+    public func load(completion: @escaping (MessageResult) -> Void) {
         
         Task {
             do {
@@ -47,7 +48,7 @@ public final class MessageLoader {
     }
     
     // Maps the response data to a `Result` type.
-    private func map(_ data: Data, from response: HTTPURLResponse) -> Result {
+    private func map(_ data: Data, from response: HTTPURLResponse) -> MessageResult {
         do {
             let Messages = try MessagesMapper.map(data, response)
             return .success(Messages)
